@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Consultar Frete</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #0f172a;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+      }
+
+      header {
+        background: #1e293b;
+        padding: 20px;
+        color: white;
+        border-bottom: 2px solid #22c55e;
+      }
+
+      .row {
+        align-items: stretch;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .redirecionar {
+        text-decoration: none;
+        color: white;
+        transition: 300ms;
+      }
+
+      .redirecionar:hover {
+        transition: 300ms;
+        color: #22c55e;
+        font-size: 17px;
+      }
+
+      .banner {
+        background: #1e293b;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .voltar {
+        color: white;
+        text-decoration: none;
+      }
+
+      .voltar:hover {
+        color: #22c55e;
+      }
+
+      .digitaCEP div {
+        background: #1e293b;
+        padding: 25px;
+        border-radius: 10px;
+      }
+
+      input {
+        background: #0f172a;
+        border: 1px solid #22c55e;
+        color: white;
+        padding: 7px;
+        border-radius: 6px;
+        width: 100%;
+      }
+
+      button {
+        background: #22c55e;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 6px;
+        font-weight: bold;
+        width: 100%;
+      }
+
+      button:hover {
+        background: #16a34a;
+      }
+
+      .tabelaFrete {
+        background: #1e293b;
+        padding: 25px;
+        border-radius: 10px;
+        height: 100%;
+      }
+
+      .table th {
+        color: #22c55e;
+      }
+
+      .resultado {
+        margin-top: 15px;
+        color: #22c55e;
+        font-weight: bold;
+      }
+
+      footer {
+        background: #020617;
+        color: white;
+        padding: 40px;
+        margin-top: 40px;
+        border-top: 2px solid #22c55e;
+      }
+
+      .social {
+        height: 35px;
+        margin: 5px;
+        transition: 0.3s;
+      }
+
+      .social:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+      }
+
+      h2 {
+        color: #22c55e;
+      }
+
+      h6 {
+        color: #22c55e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="logo col-lg-6 col-6">
+            <img src="images/logo.png" alt="" height="100px" />
+          </div>
+
+          <nav class="menu col-lg-6 col-6">
+            <a href="#" class="redirecionar">Contato</a>
+            <a href="#" class="redirecionar">Consultar Frete</a>
+            <a href="#" class="redirecionar">Carrinho</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <br /><br/>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="index.html" class="voltar"> ← Voltar para loja </a>
+          </div>
+
+          <div class="col-lg-6 mt-3 digitaCEP">
+            <div>
+              <h2>Calcular Frete</h2>
+
+              <label>Valor do Produto</label>
+
+              <input
+                type="number"
+                id="valorProduto"
+                placeholder="Digite o valor"
+              />
+
+              <br />
+
+              <label>CEP</label>
+
+              <input type="number" id="cep" placeholder="Digite o CEP" />
+
+              <br /><br />
+
+              <button onclick="calcularFrete()">Calcular Frete</button>
+
+              <div id="resultado" class="resultado"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-3">
+            <div class="tabelaFrete">
+              <h2>Tabela de Frete</h2>
+
+              <table class="table table-dark table-striped">
+                <thead>
+                  <tr>
+                    <th>Região</th>
+
+                    <th>CEP inicial</th>
+
+                    <th>Frete</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Sudeste</td>
+
+                    <td>0 e 1</td>
+
+                    <td>R$15</td>
+                  </tr>
+
+                  <tr>
+                    <td>Sul</td>
+
+                    <td>2</td>
+
+                    <td>R$18</td>
+                  </tr>
+
+                  <tr>
+                    <td>Centro-Oeste</td>
+
+                    <td>3</td>
+
+                    <td>R$20</td>
+                  </tr>
+
+                  <tr>
+                    <td>Nordeste</td>
+
+                    <td>4 e 5</td>
+
+                    <td>R$25</td>
+                  </tr>
+
+                  <tr>
+                    <td>Norte</td>
+
+                    <td>6,7,8,9</td>
+
+                    <td>R$30</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-6">
+            <img src="images/logo.png" alt="" height="200px" />
+          </div>
+          <div class="col-lg-4 col-6 text-center">
+            <div class="footerIcons">
+              <img class="social" src="images/facebook.webp" />
+              <img class="social" src="images/instagram.png" />
+              <img class="social" src="images/whatsapp.png" />
+              <img class="social" src="images/youtube.png" />
+            </div>
+
+            <br />
+
+            <p>Hardware</p>
+            <p>Games</p>
+            <p>PC Gamer</p>
+            <p>Contato</p>
+          </div>
+
+          <div class="col-lg-4 col-12 text-end">
+            <h6>Email</h6>
+            <p>contato@techstore.com</p>
+
+            <h6>Endereço</h6>
+            <p>São Paulo - SP</p>
+
+            <h6>Telefone</h6>
+            <p>(11)99999‑9999</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="cep.js"></script>
+  </body>
+</html>

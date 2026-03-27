@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja Tech</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #0f172a;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+      }
+
+      header {
+        background: #1e293b;
+        padding: 20px;
+        color: white;
+        border-bottom: 2px solid #22c55e;
+      }
+
+      .row {
+        align-items: stretch;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .redirecionar {
+        text-decoration: none;
+        color: white;
+        transition: 300ms;
+      }
+
+      .redirecionar:hover {
+        transition: 300ms;
+        color: #22c55e;
+        font-size: 17px;
+      }
+
+      #banner {
+        background: #1e293b;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .produto {
+        background: #1e293b;
+        border-radius: 12px;
+        padding: 15px;
+        margin-top: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        transition: 0.3s;
+        border: 1px solid transparent;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .produto:hover {
+        transform: translateY(-6px);
+        border: 1px solid #22c55e;
+      }
+
+      .produto img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background: #020617;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      .produto h5 {
+        min-height: 50px;
+      }
+
+      .produto p {
+        flex-grow: 1;
+        color: #cbd5f5;
+      }
+
+      .preco {
+        color: #22c55e;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      .botao {
+        background: #22c55e;
+        border: none;
+        color: white;
+        padding: 9px;
+        width: 100%;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: 0.3s;
+        margin-top: auto;
+      }
+
+      .botao:hover {
+        background: #16a34a;
+      }
+
+      .freteBox {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        height: 100%;
+      }
+
+      .btn-primary {
+        background: #22c55e;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background: #16a34a;
+      }
+
+      .form-control {
+        background: #0f172a;
+        border: 1px solid #334155;
+        color: white;
+      }
+
+      footer {
+        background: #020617;
+        color: white;
+        padding: 40px;
+        margin-top: 40px;
+        border-top: 2px solid #22c55e;
+      }
+
+      .footerIcons img {
+        height: 35px;
+        margin: 5px;
+      }
+
+      .social {
+        height: 35px;
+        margin: 5px;
+        transition: 0.3s;
+      }
+
+      .social:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="logo col-lg-6 col-6">
+            <img src="images/logo.png" alt="" height="100px" />
+          </div>
+
+          <nav class="menu col-lg-6 col-6">
+            <a href="#" class="redirecionar">Contato</a>
+            <a href="cep.html" class="redirecionar">Consultar Frete</a>
+            <a href="#" class="redirecionar">Carrinho</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <div class="container" id="banner">
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/carrossel1.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                  height="600px"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/carrossel2.webp"
+                  class="d-block w-100"
+                  alt="..."
+                  height="600px"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/carrossel3.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                  height="600px"
+                />
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/volante.png" />
+
+              <h5>Volante Gamer</h5>
+
+              <p>Volante profissional para simuladores.</p>
+
+              <p class="preco-usd">US$ 200</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/carrinho.webp" />
+
+              <h5>Carro RC</h5>
+
+              <p>Carrinho controle remoto drift!</p>
+
+              <p class="preco-usd">US$ 100</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/doom.jpg" />
+
+              <h5>DOOM</h5>
+
+              <p>Mídia física PS5!</p>
+
+              <p class="preco-usd">US$ 30</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/lego.png" />
+
+              <h5>Lego Ninjago</h5>
+
+              <p>Colecionável Lego.</p>
+
+              <p class="preco-usd">US$ 100</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+        </div>
+
+          <br>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/switchV2.jpg" />
+
+              <h5>Nintendo Switch 2</h5>
+
+              <p>Perfeito para jogar com amigos e família!</p>
+
+              <p class="preco-usd">US$ 400</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/xbox.jpg" />
+
+              <h5>Xbox SERIES X Fanta Uva</h5>
+
+              <p>Console de última geração para pessoas exigentes!</p>
+
+              <p class="preco-usd" >US$ 500</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/play5.webp" />
+
+              <h5>Playstation 5 Ghost of Yotei</h5>
+
+              <p>Console de última geração para pessoas exigentes!</p>
+
+              <p class="preco-usd">US$ 500</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="produto">
+              <img src="images/steamDeck.jpg" />
+
+              <h5>Steam Deck</h5>
+
+              <p>Tenha um console na palma da sua mão!</p>
+
+              <p class="preco-usd">US$ 600</p>
+
+              <p class="valor-real"></p>
+
+              <button class="botao">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-6">
+            <img src="images/logo.png" alt="" height="200px" />
+          </div>
+          <div class="col-lg-4 col-6 text-center">
+            <div class="footerIcons">
+              <img class="social" src="images/facebook.webp" />
+              <img class="social" src="images/instagram.png" />
+              <img class="social" src="images/whatsapp.png" />
+              <img class="social" src="images/youtube.png" />
+            </div>
+
+            <br />
+
+            <p>Hardware</p>
+            <p>Games</p>
+            <p>PC Gamer</p>
+            <p>Contato</p>
+          </div>
+
+          <div class="col-lg-4 col-12 text-end">
+            <h6>Email</h6>
+            <p>contato@techstore.com</p>
+
+            <h6>Endereço</h6>
+            <p>São Paulo - SP</p>
+
+            <h6>Telefone</h6>
+            <p>(11)99999‑9999</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
